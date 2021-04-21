@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0 0;
+    padding: 0 0;
+}
+body{
+    width: 96%;
+    
+}
+#todo{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    animation: rota 2s ease-in-out infinitive;
+    transform-style: preserve-3d;
+    display: inline-block;
+}
+#cara{
+    background: blue;
+    position:absolute;
+    transform:   translateZ(10px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+#cruz{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: green;
+    position: absolute;
+    transform:   translateZ(-10px);
+}
+@-webkit-keyframes rota{
+  0%   {-webkit-transform:  rotateY(0deg);}
+  50%  {-webkit-transform:  rotateY(180deg);}
+  100% {-webkit-transform:  rotateY(360deg);}
+}
