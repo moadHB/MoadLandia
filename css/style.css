@@ -1,40 +1,34 @@
-*{
-    box-sizing: border-box;
-    margin: 0 0;
-    padding: 0 0;
+/* Main Style off Split aplication*/
+*{box-sizing: border-box; margin: 0 0; padding: 0 0; overflow-x: hidden;}
+body{width: 96%; background-color:rgb(230, 255, 247) ;}
+
+#wrapper{ width: max-content; margin: auto; }
+#wrapper-split{  transform-style: preserve-3d;  width: 100%; height: 100%;}
+#front, #back{position:absolute; width: 100%; height: 100%;}
+
+#front{background-color: aqua; transform: translateZ(-10px);}
+#back{background-color:aquamarine ;}
+#wrapper-split:hover{animation: rotation 3s linear;}
+
+@-webkit-keyframes rotation
+{
+    0%{ -webkit-transform: rotateY(0deg) ; }
+    100% { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
 }
-body{
-    width: 96%;
-    
-}
-#todo{
-    width: 1000px;
-    height: 1000px;
-    position: absolute;
-    animation: rota 2s ease-in-out infinitive;
-    transform-style: preserve-3d;
-    display: inline-block;
-}
-#cara{
-    background: blue;
-    position:absolute;
-    transform:   translateZ(10px);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-#cruz{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: green;
-    position: absolute;
-    transform:   translateZ(-10px);
-}
-@-webkit-keyframes rota{
-  0%   {-webkit-transform:  rotateY(0deg);}
-  50%  {-webkit-transform:  rotateY(180deg);}
-  100% {-webkit-transform:  rotateY(360deg);}
-}
+/* Style the header */
+.header {padding: 80px; text-align: center; background: #1abc9c; color: white; }
+  
+/* Increase the font size of the h1 element */
+.header h1 { font-size: 40px; }
+  
+/* Style the top navigation bar */
+.navbar { overflow: hidden; background-color: #333; }
+  
+/* Style the navigation bar links */
+.navbar a { float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; }
+  
+/* Right-aligned link */
+.navbar a.right { float: right; }
+  
+/* Change color on hover */
+.navbar a:hover { background-color: #ddd; color: black;}
