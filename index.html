@@ -1,33 +1,120 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Moad Hamdoun Bghiyel" /> 
-    <meta name="description" content="Personal portafolio of my experience and my skills.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,500;0,600;0,800;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/particles.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!--Metadata-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#5e2281"><!-- Color del tema para Chrome, Firefox OS y Opera -->
+    <meta name="robots" content="index,follow"><!-- Todos los motores de búsqueda -->
+    <meta name="googlebot" content="index,follow"><!-- Específico de Google -->
+    <meta name="description" content="It is a personal Portfolio."/>
+    <meta name="subject" content="Portfolio, Three JS, FrontEnd">
+    <meta name="author" content="Moad Hamdoun Bghiyel, moadhamdounbghiyel@gmail.com">
+    <meta name="reply-to" content="moadhamdounbghiyel@gmail.com">
+    <meta name="url" content="">
+    <meta name="identifier-URL" content="">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
     <title>MoadLandia</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="Content/css/site.css" />
+    <link rel="stylesheet" href="Content/css/particle.css" />
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&amp;display=swap" rel="stylesheet">
+    <!--Icons-->
+    <link rel="shortcut icon" href="Content/images/home/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Content/images/home/favicon.ico" type="image/x-icon">
+
 </head>
 <body>
-    
-    
-    
-    <!-- particles.js container -->
-    <div id="particles-js">
-        <header>
-            <nav class="navbar">
-                <img src="images/logo.png" alt="" > 
-            </nav>
-        </header>
+    <div class="navbar-entero">
+        <!-- particles.js container -->
+        <div id="particles-js"> </div>
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            
+            <div class="navbar-elementos">
+                <a href="Home/Contact.html"><h2>Contacto</h2></a>
+                <div class="logo">
+                    <a href="index.html"><img id="navbar-logo" src="Content/images/Logo.png" alt="Logo MoadLandia" /></a>
+                </div>
+                <a href="Usuarios/Login.html" id="reservar-navbar"><h2>Sobre Mi</h2></a>
+            </div>
+        </nav>
+
+        <!-- Navbar Movil -->
+        <nav class="navbar-movil">
+            <div class="logo-movil">
+                <img id="navbar-logo-movil" src="Content/images/Logo.png" alt="Logo MoadLandia" />
+            </div>
+            <div class="contenedor-puntos">
+                <a href="#">
+                    <img id="lineas" src="Content/images/home/lineas.png" alt="Usuario menú" />
+                    <img id="puntos" src="Content/images/home/puntos.png" alt="Usuario menú" />
+                </a>
+                <div class="dropdown-content-movil">
+                    <a href="Home/Ofertas.html">Sobre Mi</a>
+                    <a href="Home/Contact.html">Contacto</a>
+                </div>
+            </div>
+        </nav>
     </div>
-    
-    <!-- scripts -->
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/anime.min.js"></script>
-    <script src="js/script.js"></script>
+    <!--Cards Main Content-->
+    <div class="contacto-listado">
+        <div class="proyectos">
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+                <div class="proyecto prueba">
+                    <h2>Proyecto Three JS</h2>
+                    <p>En este proyecto utilizo las mayas</p>
+                    <a href="#"><img src="" alt="Fotografía del Proyecto" /></a>
+                </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <a href="https://www.instagram.com//moad_alberite/" target="_blank"><img src="Content/images/home/instagram-footer.png" alt="instagram" /></a>
+        <a href="https://twitter.com/" target="_blank"><img src="Content/images/home/twitter.png" alt="twitter" /></a>
+        <a href="https://www.linkedin.com/in/moad-hamdoun-bghiyel-28a170188" target="_blank"><img src="Content/images/home/linkedin.png" alt="linkeding" /></a>
+    </div>
+    <!--Scripts-->
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Content/js/site.js"></script>
+    <script src="Content/js/particles.min.js"></script>
+    <script src="Content/js/particulas.js"></script>
 </body>
-</html>

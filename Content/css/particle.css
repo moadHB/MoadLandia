@@ -1,3 +1,9 @@
+/* ---- reset ---- */
+
+body {
+    margin: 0;    
+}
+
 canvas {
     display: block;
     vertical-align: bottom;

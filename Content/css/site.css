@@ -1,0 +1,562 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+
+/*
+    /////////////////////////
+    //////Navbar Desktop/////
+    /////////////////////////
+
+*/
+
+
+.navbar {
+    font-weight: 700;
+    width: 100%;
+    display: inline-flex;
+    position: absolute;
+    
+}
+
+.navbar-elementos {
+    width: 80%;
+    display: inline-flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.logo {
+    padding-top: 10px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    width: 40%;
+}
+
+#navbar-logo {
+    width: 100%;
+}
+
+.navbar-elementos a h2 {
+    text-align: center;
+    margin-top: 0.75vw;
+    font-size: 1.5vw;
+}
+
+.navbar-elementos > a {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 10vw;
+    height: 3vw;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+    .navbar-elementos > a:hover {
+        transition: 0.3s;
+        color: black;
+    }
+
+    .navbar-elementos > a:after {
+        content: "";
+        background: white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        z-index: -1;
+        transition: transform 0.4s;
+    }
+
+    .navbar-elementos > a:hover::after {
+        transform: scaleY(1);
+    }
+
+.navbar-user {
+    position: relative;
+    width: 6%;
+}
+
+#foto-usuario {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#foto-usuario, #foto-usuario-hover, #admin-fijo, #astronauta-fijo {
+    width: 100%
+}
+
+#reservar-navbar:hover {
+    color: white;
+}
+
+#reservar-navbar:after {
+    content: "";
+    background: #b325b1;
+}
+
+.dieciocho {
+    font-size: 18px !important;
+}
+
+.morado {
+    color: #c824e3 !important;
+    text-decoration: none;
+}
+
+
+/* Dropdown menu desktop */
+.dropdown-content {
+    position: absolute;
+    background-color: white;
+    min-width: 15vw;
+    z-index: 1;
+    left: -10.4vw;
+    top: 7vw;
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.2s linear;
+    -moz-transition: max-height 0.2s linear;
+    transition: max-height 0.2s linear;
+    -webkit-box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+    -moz-box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+    box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+}
+
+    .dropdown-content a {
+        float: none;
+        display: block;
+        color: black;
+        margin: 0.5vw 0px;
+        padding: 1vw 0px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.15vw;
+    }
+
+
+
+/* Navbar Móvil */
+
+.navbar-movil {
+    display: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        display: none;
+    }
+
+    .navbar-movil {
+        display: inline-flex;
+    }
+}
+
+.logo-movil {
+    position: relative;
+    margin-left: 5vw;
+    margin-right: 3vw;
+    width: 40vw;
+}
+
+#navbar-logo-movil {
+    width: 100%;
+    padding-top: 35px;
+}
+
+.contenedor-puntos {
+    position: relative;
+    width: 35vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#puntos {
+    width: 90%;
+}
+
+#lineas {
+    width: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.dropdown-content-movil {
+    position: absolute;
+    background-color: white;
+    min-width: 71vw;
+    z-index: 1;
+    left: -44.5vw;
+    top: 26vw;
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.2s linear;
+    -moz-transition: max-height 0.2s linear;
+    transition: max-height 0.2s linear;
+    -webkit-box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+    -moz-box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+    box-shadow: 10px 10px 28px 1px rgba(0,0,0,0.82);
+}
+
+    .dropdown-content-movil a {
+        float: none;
+        display: block;
+        color: black;
+        margin: 10px 0px;
+        padding: 10px 0px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 5vw;
+    }
+
+#foto-usuario-hover-movil {
+    width: 100%;
+}
+
+.foto-menu-movil {
+    width: 23vw;
+    margin: auto auto !important;
+}
+
+
+/*
+    /////////////////////////
+    ///////////Home//////////
+    /////////////////////////
+
+*/
+
+
+.home-wrapper {
+    position: absolute;
+    top: 11vw;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+    pointer-events: none;
+}
+
+    .home-wrapper > h1, .home-wrapper > h2 {
+        padding: 2vw;
+    }
+
+    .home-wrapper h1 {
+        font-weight: 900;
+        font-size: 6vw;
+        /*color: #c824e3;*/
+        color: transparent;
+        -webkit-text-stroke: 4px #c824e3;
+    }
+
+.footer {
+    border-radius: 40px;
+    background: rgba(0,0,0,0.7);
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    padding: 5px;
+}
+
+    .footer img {
+        width: 90px;
+    }
+
+/* Home móvil */
+
+@media (max-width: 600px) {
+    .home-wrapper {
+        top: 45vw;
+    }
+
+        .home-wrapper h1 {
+            color: #c824e3;
+        }
+
+    .particles-js-canvas-el {
+        height: 80% !important;
+    }
+}
+
+/* pantalla mediana (tablet)*/
+@media (max-width: 1300px) {
+    .pasion {
+        font-size: 5.5vw;
+    }
+
+    .home-wrapper {
+        top: 23%;
+    }
+
+        .home-wrapper h1 {
+            font-size: 9vw;
+            font-weight: 700;
+        }
+}
+
+
+
+/*
+    /////////////////////////
+    ///////////Contacto//////
+    /////////////////////////
+
+*/
+
+
+.contacto-listado {
+    background-color: transparent;
+    top: 20%;
+    position: absolute;
+    width: 86%;
+    min-height: 60%;
+    left: calc(50% - 43%);
+}
+
+    /* TABLAS */
+
+    .contacto-listado table {
+        font-weight: 500;
+        margin: auto;
+        background-color: whitesmoke;
+        color: black;
+        width: 100%;
+    }
+
+        .contacto-listado table tr:nth-child(even) {
+            background-color: #d1d1d1;
+        }
+
+        .contacto-listado table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .contacto-listado table tr:hover {
+            background-color: #b5b5b5;
+        }
+
+
+/*
+    /////////////////////////
+    /////////Proyectos////////
+    /////////////////////////
+
+*/
+
+.proyectos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.proyecto {
+    color: black;
+    background: white;
+    margin: 28px;
+    flex-basis: calc((100% - 168px)/3);
+    padding: 50px;
+    min-height: 17vw;
+}
+
+    .proyecto:hover {
+        transition: 0.5s;
+        transform: scale(1.03);
+    }
+
+    .proyecto img {
+        width: 100%;
+    }
+
+    .proyecto p {
+        padding: 20px 0;
+        font-weight: 400;
+    }
+
+.proyecto-details {
+    display: flex;
+}
+
+    .proyecto-details img {
+        width: 42%;
+    }
+
+.proyecto-details-texto {
+    padding: 0 20px;
+}
+
+    .proyecto-details-texto h1 {
+        margin-bottom: 20px;
+        font-size: 50px;
+    }
+
+    .proyecto-details-texto p {
+        font-weight: 400;
+    }
+
+@media (max-width: 1360px) {
+
+    .proyecto {
+        flex-basis: calc((100% - 112px)/2);
+    }
+}
+
+@media (max-width: 760px) {
+
+    .proyecto {
+        flex-basis: calc(100% - 56px);
+    }
+}
+
+/*
+    /////////////////////////
+    ////////Formularios//////
+    /////////////////////////
+
+*/
+
+/*Usuarios*/
+.registrado {
+    margin-bottom: 30px;
+    color: #bd22d7;
+    font-weight: 400;
+}
+
+.formulario form {
+    width: 50%;
+    margin: 60px auto 190px auto;
+    position: relative;
+}
+
+
+.formulario .form-group {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.formulario .form-input {
+    padding-top: 21px;
+}
+
+    .formulario .form-input span {
+        padding-top: 5px;
+        font-weight: 400;
+    }
+
+.formulario .form-label {
+    position: absolute;
+    transition: 0.25s ease;
+    -moz-transition: 0.25s ease;
+    -webkit-transition: 0.25s ease;
+    -o-transition: 0.25s ease;
+    -ms-transition: 0.25s ease;
+    color: #bebebe;
+    left: 0;
+    top: 23px;
+    font-size: 20px;
+}
+
+.formulario .drop-label {
+    color: #c824e3;
+    font-size: 17px;
+}
+
+.formulario input {
+    transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    padding-top: 10px;
+    -webkit-appearance: none;
+    font-size: 20px;
+}
+
+    .formulario input:focus + .form-label, input:valid + .form-label {
+        top: 1px;
+        font-size: 17px;
+        color: #c824e3;
+    }
+
+.formulario input, select {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    border: none;
+    color: white;
+    background: transparent !important;
+    border-bottom: 1px solid #999;
+    padding: 9px 0;
+}
+
+    .formulario input:focus, select:focus {
+        outline: none;
+        border-bottom: 1px solid #c824e3;
+    }
+
+    .formulario input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px transparent inset;
+    }
+
+    .formulario input::-webkit-input-placeholder, input::-moz-placeholder, input:-ms-input-placeholder, input:-moz-placeholder {
+        color: white;
+    }
+
+    .formulario input:-internal-autofill-selected {
+        background-color: transparent !important;
+    }
+
+.formulario .submit {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    width: auto;
+    background: white !important;
+    color: black;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+    .formulario .submit:hover {
+        background: #c824e3 !important;
+        color: white;
+    }
+
+
+.formulario .check {
+    width: auto;
+    -webkit-appearance: checkbox;
+    margin-top: 15px;
+}
+
+select option {
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+center {opacity: 0;}
