@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
@@ -365,17 +366,22 @@ body {
 */
 
 .proyectos {
-    display: flex;
+    display: relative;
     flex-wrap: wrap;
+    
 }
 
 .proyecto {
+    float:left ;
     color: black;
     background: white;
-    margin: 28px;
+    margin: 18px;
     flex-basis: calc((100% - 168px)/3);
     padding: 50px;
     min-height: 17vw;
+    max-width: 45%;
+    min-width: 15%;
+    margin-left: 18px;
 }
 
     .proyecto:hover {
@@ -416,7 +422,9 @@ body {
 @media (max-width: 1360px) {
 
     .proyecto {
+        display: inline-block;
         flex-basis: calc((100% - 112px)/2);
+        margin: 18px;
     }
 }
 
@@ -424,6 +432,7 @@ body {
 
     .proyecto {
         flex-basis: calc(100% - 56px);
+        max-width: 100%;
     }
 }
 
@@ -433,13 +442,6 @@ body {
     /////////////////////////
 
 */
-
-/*Usuarios*/
-.registrado {
-    margin-bottom: 30px;
-    color: #bd22d7;
-    font-weight: 400;
-}
 
 .formulario form {
     width: 50%;
@@ -560,3 +562,26 @@ textarea {
 }
 
 center {opacity: 0;}
+
+/*
+    /////////////////////////
+    ////////About Me/////////
+    /////////////////////////
+
+*/
+.image-face{
+    max-width: 50%;
+    float: right;
+    margin: auto;
+}
+#scene{
+    overflow: hidden;
+}
+
+@media (max-width: 760px) {
+
+    .image-face {
+        
+        max-width: 100%;
+    }
+}

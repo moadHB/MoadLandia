@@ -32,3 +32,7 @@ $(document).click(function (e) {
         $(".home-wrapper").fadeIn(1000);
     }
 });
+
+//PARALLAX
+var scene = $('#scene').get(0);
+var parallaxInstance = new Parallax(scene);
