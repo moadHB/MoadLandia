@@ -1,0 +1,72 @@
+    <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My 3º three.js app</title>
+		<style>
+			body { margin: 0; overflow-x: hidden;}
+		</style>
+	</head>
+	<body>
+		<script src="../three.min.js"></script>
+		<script>
+            //escena a pantalla completa
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            //Renderizado de la malla y la escena
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+            
+			//fondo de 10000 puntos aleatorios 
+			const vertices = [];
+			for ( let i = 0; i < 10000; i ++ ) {
+
+				const x = THREE.MathUtils.randFloatSpread( 2000 );
+				const y = THREE.MathUtils.randFloatSpread( 2000 );
+				const z = THREE.MathUtils.randFloatSpread( 2000 );
+
+				vertices.push( x, y, z );
+
+			}
+			const geometriaPuntos= new THREE.BufferGeometry();
+			geometriaPuntos.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
+			const materialPuntos = new THREE.PointsMaterial( { color: 0x888888 } );
+			const points = new THREE.Points( geometriaPuntos, materialPuntos );
+			scene.add( points );
+			//generacion de lineas en puntos aleatorios
+			const materialLinea = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+			const pointsLinea = [];
+			for ( let i = 0; i < 100; i ++ ) {
+				const x = THREE.MathUtils.randFloatSpread( 2000 );
+				const y = THREE.MathUtils.randFloatSpread( 2000 );
+				const z = THREE.MathUtils.randFloatSpread( 2000 );
+				pointsLinea.push( new THREE.Vector3( x, y, z ));
+			}
+			const geometryLinea = new THREE.BufferGeometry().setFromPoints( pointsLinea );
+			const linea = new THREE.Line( geometryLinea, materialLinea );
+			scene.add( linea );
+			//Añadir material y geometria de cubo para crear una malla
+			const geometry = new THREE.BoxGeometry(3,3,3,1,1,1);
+			const material = new THREE.MeshNormalMaterial();
+			const cube = new THREE.Mesh( geometry, material );
+			
+			scene.add( cube );
+
+			camera.position.z = 5;
+			
+			
+			//Animacion rotacion del cubo
+			const animate = function () {
+				requestAnimationFrame( animate );
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+			
+			animate();
+		</script>
+	</body>
+</html>
