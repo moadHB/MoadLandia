@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4º proyecto</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script src="../three.min.js" ></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        var scene, camera, renderer, cube, controls;
+
+        function init() {
+            
+            scene=new THREE.Scene();
+            camera= new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer= new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            const loader = new THREE.GLTFLoader();
+            async  ()=>{  
+                loader.load("../avatar.glb",  function (glb) {
+                    console.log(glb);
+                    scene.add(glb.scene);
+                }, function (xhr) { 
+                    console.log((xhr.loaded/xhr.total*100)+"% loaded");
+                 },function (error) { 
+                     console.log('error ocurred');
+                  });
+            }
+
+            const ligth = new THREE.PointLight(0xffffff,2,200);
+            ligth.position.set(4.5,10,4.5);
+            scene.add(ligth);
+
+            camera.position.y=1;
+            camera.position.z=3;
+
+            controls= new THREE.OrbitControls(camera, renderer.domElement);
+            controls.target.set(4.5,0,4.5);
+            controls.enablePan=false;
+            controls.maxPolarAngle= Math.PI/2;
+            controls.enableDamping=true;
+        }
+        function animate() {
+            controls.update();
+            renderer.render(scene,camera);
+            window.requestAnimationFrame(animate);
+        }
+        function onWindowResize(params) {
+            camera.aspect=window.innerWidth/window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth,window.innerHeight);
+        }
+        window.addEventListener('resize',onWindowResize);
+        window.onload=init;
+    </script>
+</body>
+</html>
