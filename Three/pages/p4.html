@@ -25,9 +25,10 @@
             document.body.appendChild(renderer.domElement);
 
             const loader = new THREE.GLTFLoader();
-            loader.load("../avatar.glb",  function (glb) {
-                console.log(glb);
-                scene.add(glb.scene);
+            loader.load("../avatar.gltf",  function (glb) {
+                const root= glb.scene;
+                root.scale.set(0.01,0.01,0.01);
+                scene.add(root);
             }, function (xhr) { 
                 console.log((xhr.loaded/xhr.total*100)+"% loaded");
                 },function (error) { 
@@ -35,8 +36,8 @@
             });
             
 
-            const ligth = new THREE.PointLight(0xffffff,2,200);
-            ligth.position.set(4.5,10,4.5);
+            const ligth = new THREE.DireccionalLight(0xffffff,1);
+            ligth.position.set(2,2,5);
             scene.add(ligth);
 
             camera.position.y=1;
@@ -51,7 +52,7 @@
         function animate() {
             controls.update();
             renderer.render(scene,camera);
-            window.requestAnimationFrame(animate);
+            requestAnimationFrame(animate);
         }
         function onWindowResize(params) {
             camera.aspect=window.innerWidth/window.innerHeight;
