@@ -10,17 +10,19 @@
     </style>
 </head>
 <body>
+    <canvas class="webgl"></canvas>
     <script src="../three.min.js" ></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
     <script>
+        const canvas=document.querySelector(".webgl");
         var scene, camera, renderer, cube, controls;
 
         function init() {
             
             scene=new THREE.Scene();
-            camera= new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 1000);
-            renderer= new THREE.WebGLRenderer();
+            camera= new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 100);
+            renderer= new THREE.WebGLRenderer({canvas:canvas});
             renderer.setSize(window.innerWidth, window.innerHeight);
             document.body.appendChild(renderer.domElement);
 
@@ -29,9 +31,7 @@
                 const root= glb.scene;
                 root.scale.set(0.01,0.01,0.01);
                 scene.add(root);
-            }, function (xhr) { 
-                console.log((xhr.loaded/xhr.total*100)+"% loaded");
-                },function (error) { 
+            },function (error) { 
                     console.log('error ocurred');
             });
             
