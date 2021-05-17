@@ -4,63 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4º proyecto</title>
+    <title>My 4º three.js app</title>
     <style>
-        
+        *{
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
     <canvas class="webgl"></canvas>
     <script src="../three.min.js" ></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js"></script>
     <script>
         const canvas=document.querySelector(".webgl");
-        var scene, camera, renderer, cube, controls;
-
-        function init() {
-            
-            scene=new THREE.Scene();
-            camera= new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 100);
-            renderer= new THREE.WebGLRenderer({canvas:canvas});
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-
-            const loader = new THREE.GLTFLoader();
-            loader.load("../avatar.glb",  function (glb) {
-                const root= glb.scene;
-                root.scale.set(0.01,0.01,0.01);
-                scene.add(root);
-            },function (error) { 
-                    console.log('error ocurred');
-            });
-            
-
-            const ligth = new THREE.DirectionalLight(0xffffff,1);
-            ligth.position.set(2,2,5);
-            scene.add(ligth);
-
-            camera.position.y=1;
-            camera.position.z=3;
-
-            controls= new THREE.OrbitControls(camera, renderer.domElement);
-            controls.target.set(4.5,0,4.5);
-            controls.enablePan=false;
-            controls.maxPolarAngle= Math.PI/2;
-            controls.enableDamping=true;
-        }
+        //escena
+        const scene=new THREE.Scene();
+        scene.background = new THREE.Color( 0xf0f0f0 );
+        //cargamos el modelo 3d
+        const loader = new THREE.GLTFLoader();
+        loader.load("../avatar.glb",  function (glb) {
+            const root= glb.scene;
+            root.scale.set(10,10,10);
+            scene.add(root);
+        },function (error) { 
+                console.log('error ocurred');
+        });
+        //luz
+        const light = new THREE.DirectionalLight(0xffffff,1);
+        light.position.set(0,0,5);
+        scene.add(light);
+        
+        const sizes={
+            width:window.innerWidth,
+            height: window.innerHeight
+        };
+        //camara
+        const camera= new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0,5,10);
+        //renderizamos
+        renderer= new THREE.WebGLRenderer({canvas:canvas});
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled=true;
+        renderer.outputEncoding= true;
+        //el modelo necesita animacion para que se vea constantemente
         function animate() {
-            controls.update();
-            renderer.render(scene,camera);
             requestAnimationFrame(animate);
+            renderer.render(scene,camera);
         }
-        function onWindowResize(params) {
-            camera.aspect=window.innerWidth/window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth,window.innerHeight);
-        }
-        window.addEventListener('resize',onWindowResize);
-        window.onload=init;
+        animate();
     </script>
 </body>
 </html>
