@@ -25,16 +25,15 @@
             document.body.appendChild(renderer.domElement);
 
             const loader = new THREE.GLTFLoader();
-            async  ()=>{  
-                loader.load("../avatar.glb",  function (glb) {
-                    console.log(glb);
-                    scene.add(glb.scene);
-                }, function (xhr) { 
-                    console.log((xhr.loaded/xhr.total*100)+"% loaded");
-                 },function (error) { 
-                     console.log('error ocurred');
-                  });
-            }
+            loader.load("../avatar.glb",  function (glb) {
+                console.log(glb);
+                scene.add(glb.scene);
+            }, function (xhr) { 
+                console.log((xhr.loaded/xhr.total*100)+"% loaded");
+                },function (error) { 
+                    console.log('error ocurred');
+            });
+            
 
             const ligth = new THREE.PointLight(0xffffff,2,200);
             ligth.position.set(4.5,10,4.5);
